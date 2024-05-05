@@ -7,7 +7,7 @@ export const useLogin = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
-    const login = async(username, password)=>{
+    const login = async (username, password) => {
         setIsLoading(true);
         const user = {
             username,
@@ -16,23 +16,26 @@ export const useLogin = () => {
         const response = await loginRequest(user);
         setIsLoading(false);
 
-        if(response.error){
+        if (response.error) {
             return toast.error(
                 response?.e?.response?.data ||
-                'Error al logeatse. Intenta de nuevo.'
+                'Error al logearse. Intenta de nuevo.'
             )
         }
 
+        console.log(response);
         //userDetails?
         const { token } = response.data
-        localStorage.setItem('user', token)
-        navigate('/tasks')//redireccionamiento de pagina
+        localStorage.setItem('token', token)
+
+        toast.success('Bienvenido')
+        //navigate('/tasks')//redireccionamiento de pagina
     }
 
-  return (
-    login,
-    isLoading
-  )
+    return {
+        login,
+        isLoading
+    }
 }
 
 

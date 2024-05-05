@@ -43,7 +43,7 @@ export const Input = (
                 <input 
                     type = {type}
                     value={value}
-                    onChange={onChangeHandler}
+                    onChange={handleValueChange}
                     onBlur={handleOnBlur}
                 />
             )
@@ -60,8 +60,8 @@ Input.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     onChangeHandler: PropTypes.func.isRequired,
-    type: PropTypes.string.isRequired,
     showErrorMessage: PropTypes.bool.isRequired,
+    type: PropTypes.string.isRequired,
     validationMessage: PropTypes.string,
     onBlurHandler: PropTypes.func.isRequired,
     textarea: PropTypes.bool

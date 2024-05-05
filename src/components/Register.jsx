@@ -3,7 +3,7 @@ import { Input } from "./Input"
 import { useRegister } from "../shared/hooks/useRegister"
 import { emailValidationMessage, nameValidationMessage, passConfirmValidationMessage, passwordValidationMessage, surnameValidationMessage, usernameValidationMessage, validateEmail, validateName, validatePassConfirm, validatePassword, validateSurname, validateUsername } from "../shared/validators/validator";
 
-export const Register = ({ switchAuthHandler }) => {
+export const Register = () => {
     const { register, isLoading } = useRegister();
 
     const [formData, setFormData] = useState(
@@ -185,7 +185,7 @@ export const Register = ({ switchAuthHandler }) => {
                 </button>
             </form>
 
-            <span onClick={switchAuthHandler}>
+            <span>
                 ¿Ya tienes una cuenta? ¡Inicia sesión acá!
             </span>
         </div>

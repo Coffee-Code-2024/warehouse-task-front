@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { useLogin } from '../shared/hooks/useLogin.jsx';
 
 
-export const Login = ({switchAuthHandler}) => {
+export const Login = () => {
 
   const { login, isLoading } = useLogin();
   const [formData, setFormData] = useState(
@@ -44,12 +44,13 @@ export const Login = ({switchAuthHandler}) => {
     ))
   }
 
+  //validamos si los formatos son validos
   const handleValidationOnBlur = (value, field) => {
     let isValid = false;
 
     switch (field) {
       case 'username':
-        isValid = [validateUsername(value) || validateEmail(value)]
+        isValid = validateUsername(value)
         break;
       case 'password':
         isValid = validatePassword(value)
@@ -112,7 +113,7 @@ export const Login = ({switchAuthHandler}) => {
           Log In
         </button>
       </form>
-      <span onClick={switchAuthHandler} className='auth-form-switch-label'>
+      <span className='auth-form-switch-label'>
         ¿Aún no tienes una cuenta? ¡Registrate...!
       </span>
     </div>

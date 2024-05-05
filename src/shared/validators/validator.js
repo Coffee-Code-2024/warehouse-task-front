@@ -24,7 +24,7 @@ export const validateSurname = (surname)=>{
 
 /*--------------------- VALIDACIÓN DE CONTRASEÑA ---------------------------- */
 export const validatePassword = (password) => {
-    const regex = /^\S{6,12}$/
+    const regex = /^\S{5,12}$/
     return regex.test(password)
 }
 

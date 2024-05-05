@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:27017/GestorTareas_Constructora',
+    baseURL: 'http://localhost:2657',
     timeout: 1000
 });
 
@@ -10,8 +10,7 @@ apiClient.interceptors.request.use(
     (config) => {
         const userDetails = localStorage.getItem('user');
         if (userDetails) {
-            const token = JSON.parse(userDetails).token;
-            config.headers.Authorization = `Bearer ${token}`;
+            config.headers.Authorization = userDetails;
         }
         return config;
     },
@@ -31,9 +30,9 @@ export const registerRequest = async (user) => {
 }
 
 //consulta a back para logearnos
-export const loginRequest = async (user) => {
+export const loginRequest = async (data) => {
     try {
-        return await apiClient.post('/user', user);
+        return await apiClient.post('/user', data);
     } catch (err) {
         return {
             error: true,
