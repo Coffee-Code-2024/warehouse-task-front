@@ -55,7 +55,7 @@ export const Input = (
   )
 }
 
-Input.PropTypes = {
+Input.propTypes = {
     field: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,

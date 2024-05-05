@@ -1,5 +1,4 @@
 import axios from 'axios';
-import api from '../../../../../gestor-opiniones/gestor-opiniones/src/post/post.routes';
 
 const apiClient = axios.create({
     baseURL: 'http://localhost:27017/GestorTareas_Constructora',
