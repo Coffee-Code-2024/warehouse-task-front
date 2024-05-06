@@ -1,4 +1,5 @@
 import App from './App';
+import { PageNotFound } from './Pages/PageNotFound/PageNotFound.jsx';
 import { Login } from './components/Login.jsx';
 
 export const routes = [
@@ -8,10 +9,10 @@ export const routes = [
     },
     {
         path: '/tasks/*',
-        element: <Login/>
+        element: <Login />
     },
     {
         path: '*',
-        element: <Login />
+        elent: <PageNotFound />
     }
 ]
