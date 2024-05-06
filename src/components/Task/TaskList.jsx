@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Input } from './Input.jsx';
-import { ComboBox } from './ComboBox.jsx';
-import coffeandcode from '../img/coffeandcode.png'
-import { useSaveTask } from '../shared/hooks/useSaveTask.jsx';
+import { Input } from '../Input.jsx';
+import { ComboBox } from '../ComboBox.jsx';
+import coffeandcode from './../../img/coffeandcode.png'
+import { useSaveTask } from '../../shared/hooks/useSaveTask.jsx';
 
 export const TaskList = () => {
   // Declarar el estado de `tasks` y `setTasks`

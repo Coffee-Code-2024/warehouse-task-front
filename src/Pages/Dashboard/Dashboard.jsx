@@ -1,4 +1,4 @@
-import { TaskList } from "../../components/TaskList.jsx"
+import { TaskList } from "../../components/Task/TaskList.jsx"
 import { useEffect } from "react"
 import { useGetTasks } from "../../shared/hooks/useGetTasks.jsx"
 import { PacmanLoader } from 'react-spinners'

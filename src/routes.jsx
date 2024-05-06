@@ -1,16 +1,20 @@
 import App from './App';
 import { PageNotFound } from './Pages/PageNotFound/PageNotFound.jsx';
 import { Login } from './components/Login.jsx';
-import { Dashboard } from "./Pages/Dashboard/Dashboard.jsx";
+import { TaskContent } from './components/Task/TaskContent.jsx';
+import { CardTask } from './components/Task/CardTask.jsx'
 
 export const routes = [
     {
         path: '/',
         element: <App />
+    },{
+        path: '/card',
+        element: <CardTask />
     },
     {
-        path: '/tasks/*',
-        element: <Dashboard />
+        path: '/dashboard/*',
+        element: <TaskContent />
     },
     {
         path: '*',

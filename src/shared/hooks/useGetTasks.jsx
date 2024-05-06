@@ -2,8 +2,7 @@ import { useState } from "react"
 import { getTasksRequest } from "../../services/api"
 import toast from 'react-hot-toast'
 
-export const useGetTasks = () => {
-
+export const UseGetTasks = () => {
     const [tasks, setTasks] = useState(null);//guardar los datos que me devuelve el back
 
     const getTasks = async () => {
@@ -16,6 +15,7 @@ export const useGetTasks = () => {
         }
 
         setTasks(response.data);
+        console.log(response.data);
     }
 
     return {
