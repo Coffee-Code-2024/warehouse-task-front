@@ -10,7 +10,7 @@ export const CardTask = ({ tareas }) => {
     const { updatedTask, isFetching, updateTask } = useUpdateTask()
     const { deleteTask } = useDeleteTask();
 
-    const [taskToUpdate, setTaskToUpdate] = useState({
+    const [task, setTask] = useState({
         _id: '',
         title: '',
         description: '',
@@ -20,8 +20,8 @@ export const CardTask = ({ tareas }) => {
         user: null
     });
 
-    const getUpdate = (task) => {
-        setTask(task);
+    const getUpdate = (tarea) => {
+        setTask(tarea);
     }
 
     const handleChange = (e) => {
@@ -47,7 +47,7 @@ export const CardTask = ({ tareas }) => {
 
     return (
         <>
-            {tareas.map((task) => (
+            {
                 <div key={task._id}>
                     <Card className="max-w-[400px]" style={{ backgroundColor: '#11111150', padding: '10px', border: '2px solid black', borderRadius: '5px' }}>
                         <CardHeader className="flex gap-3">
@@ -74,7 +74,7 @@ export const CardTask = ({ tareas }) => {
                         </CardFooter>
                     </Card>
                 </div>
-            ))}
+            }
         </>
 
     )

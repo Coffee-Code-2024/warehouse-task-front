@@ -7,7 +7,7 @@ import { TaskList } from './../Task/TaskList.jsx'; //Task lists //formulario
 
 export const TaskContent = () => {
 
-  const { tasks, getTasks, isFetching } = UseGetTasks();
+  const { tasks, isFetching, getTasks } = UseGetTasks();
 
   useEffect(() => {
     getTasks();
@@ -15,8 +15,12 @@ export const TaskContent = () => {
 
   if (isFetching) {
     return (
-      <div className="container d-flex align-items-center justify-content-center vh-100">
-        <PacmanLoader color="#ffe733" />
+      <div>
+        {isFetching ? (
+          <PacmanLoader color="#ffe733" />
+        ) : (
+          <CardTask tareas={tasks} />
+        )}
       </div>
     )
   }
