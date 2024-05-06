@@ -1,5 +1,6 @@
 import App from './App';
 import { Login } from './components/Login.jsx';
+import { Dashboard } from "./Pages/Dashboard/Dashboard.jsx";
 
 export const routes = [
     {
@@ -8,7 +9,7 @@ export const routes = [
     },
     {
         path: '/tasks/*',
-        element: <Login/>
+        element: <Dashboard />
     },
     {
         path: '*',
