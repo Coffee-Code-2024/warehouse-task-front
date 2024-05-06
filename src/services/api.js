@@ -8,7 +8,7 @@ const apiClient = axios.create({
 //Interceptor para inyectar token si está logeado
 apiClient.interceptors.request.use(
     (config) => {
-        const userDetails = localStorage.getItem('user');
+        const userDetails = localStorage.getItem('token');
         if (userDetails) {
             config.headers.Authorization = userDetails;
         }
