@@ -29,7 +29,7 @@ export const useLogin = () => {
         localStorage.setItem('token', token)
 
         toast.success('Bienvenido')
-        navigate('/dashboard/tasks')//redireccionamiento de pagina
+        navigate('/dashboard')//redireccionamiento de pagina
     }
 
     return {

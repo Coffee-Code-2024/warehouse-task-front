@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const apiClient = axios.create({
     baseURL: 'http://localhost:2657',
-    timeout: 1000
+    timeout: 5000
 });
 
 //Interceptor para inyectar token si está logeado

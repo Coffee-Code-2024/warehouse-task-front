@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { getTasksRequest } from "../../services/api"
 import toast from 'react-hot-toast'
 
@@ -7,22 +7,26 @@ export const UseGetTasks = () => {
     const [isFetching, setIsFetching] = useState(false);
 
     const getTasks = async () => {
-        setIsFetching(true);
         const response = await getTasksRequest()//respuesta del back api.js
-        setIsFetching(false);
         if (response.error) {
+            //response.err.data depende de como venga en el back
             return toast.error(
                 response?.err?.data?.message ||
+                response?.err?.response?.data?.message ||
+                response?.err?.message ||
                 'Error al obtener las tareas'
             )
         }
-
-        setTasks(response.data);
+        
+        //console.log(response);
+        //setTasks(prevTask => [...prevTask, response]);
+        setTasks(response.data.tasks)
+        //console.log(tasks)
     }
 
     return {
         tasks,
-        isFetching,
+        isFetching: !tasks,
         getTasks
     }
 }

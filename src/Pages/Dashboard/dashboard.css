@@ -10,12 +10,6 @@ body{
 
 }
 
-.logo {
-  max-width: 100px; /* Adjust the value to make the logo smaller */
-  height: 100%;
-  margin-right: 10px;
-}
-
 @media (max-width: 768px) {
   .logo {
     max-width: 50px; /* Adjust the value to make the logo smaller on smaller screens */
@@ -34,7 +28,7 @@ body{
 /* Lista de tareas */
 .task-list {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10em;
   padding: 20px;
   border: 4px solid #4CAF50; /* Cambiado el color del borde */
   border-radius: 8px;
@@ -47,12 +41,17 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  height: 60vh;
 }
 
 /* Contenedor de la lista de tareas */
-.task-container-list {
+.task-form-list {
+  display: flex;
   flex-direction: column;
   padding: 1em;
+  align-items: center;
+  max-width: 50%;
 }
 
 /* Contenedor de las tareas */
@@ -61,7 +60,7 @@ body{
   line-height: 1em;
   overflow-x: hidden;
   overflow-y: scroll;
-  border: 2px solid #4CAF50; /* Cambiado el color del borde */
+  border: 5px; /* Cambiado el color del borde */
   margin: 10px;
 }
 
@@ -99,7 +98,7 @@ body{
 
 /* Controles de la lista de tareas */
 .task-list-controls {
-  margin: 10px;
+  margin: 0;
 }
 
 /* Botones de los controles */
@@ -109,9 +108,8 @@ body{
   color: #fff;
   border: none;
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
-  border-radius: 4px; /* Bordes redondeados */
 }
 
 /* Efecto de hover para botones */
@@ -123,6 +121,7 @@ body{
 .task-list-form {
   background-color: #FFFFFF; /* Cambiado el color de fondo */
   padding: 20px;
+  max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

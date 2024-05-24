@@ -2,6 +2,7 @@ import { TaskList } from "../../components/Task/TaskList.jsx"
 import { useEffect } from "react"
 import { useGetTasks } from "../../shared/hooks/useGetTasks.jsx"
 import { PacmanLoader } from 'react-spinners'
+
 import './dashboard.css'
 
 export const Dashboard = () => {

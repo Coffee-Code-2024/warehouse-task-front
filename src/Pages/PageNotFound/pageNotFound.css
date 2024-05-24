@@ -1,0 +1,16 @@
+.pagenotfund-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagenotfund-container .pagenotfund-container-2{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}

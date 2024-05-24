@@ -1,9 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
-import { CardTask } from './CardTask.jsx';
+import { FormTask } from './FormTask.jsx';
 import { UseGetTasks } from './../../shared/hooks/useGetTasks.jsx';
 import { useEffect } from 'react';
+import { Header } from './../../components/Header/Header.jsx'
 import { PacmanLoader } from 'react-spinners'
-import { TaskList } from './../Task/TaskList.jsx'; //Task lists //formulario
 
 export const TaskContent = () => {
 
@@ -16,21 +15,25 @@ export const TaskContent = () => {
   if (isFetching) {
     return (
       <div>
-        {isFetching ? (
-          <PacmanLoader color="#ffe733" />
-        ) : (
-          <CardTask tareas={tasks} />
-        )}
+        <PacmanLoader color="#ffe733" />
       </div>
     )
   }
 
+  console.log(tasks);
+
+
   //rutas hijas
   return (
-    <div>
-      <Routes>
-        <Route path='tasks' element={<CardTask tareas={tasks} />} />
-      </Routes>
-    </div>
+    <>
+
+      <div>
+        <div>
+          <Header />
+        </div>
+        <FormTask tareas={tasks} />
+      </div>
+    </>
+
   )
 }

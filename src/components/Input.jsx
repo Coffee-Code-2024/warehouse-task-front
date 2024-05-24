@@ -37,7 +37,7 @@ export const Input = (
                     onChange={handleValueChange}
                     onBlur={handleOnBlur}
                     rows={5}
-                    style={{maxWidth: '400px'}}
+                    style={{minWidth: '100%'}}
                 />
             ):(
                 <input 
@@ -45,6 +45,7 @@ export const Input = (
                     value={value}
                     onChange={handleValueChange}
                     onBlur={handleOnBlur}
+                    style={{minWidth: '100%'}}
                 />
             )
         }
