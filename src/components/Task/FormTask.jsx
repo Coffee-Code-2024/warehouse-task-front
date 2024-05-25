@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import './../../Pages/Dashboard/dashboard.css'
 
 export const FormTask = ({ tareas }) => {
+    const [state, setState] = useState(true)
     const { updatedTask, isFetching, updateTask } = useUpdateTask()
     const { deleteTask } = useDeleteTask();
     const [filteredTasks, setFilteredTasks] = useState([]);
@@ -27,6 +28,7 @@ export const FormTask = ({ tareas }) => {
 
     const getUpdate = (tarea) => {
         setTask(tarea);
+        setState(false);
     }
 
     const handleChange = (e) => {
@@ -38,15 +40,18 @@ export const FormTask = ({ tareas }) => {
         ))
     }
 
-    const handleSubmit = (id, task) => {
+    //const handleUptadeTask = ()
+
+    const handleSubmit = () => {
         updateTask(
-            id,
+            task._id,
             task
         )
+        setState(true)
     }
 
     const delTask = (id) => {
-        deleteTask(id);
+        deleteTask(id)
     }
 
     //doren
@@ -175,8 +180,14 @@ export const FormTask = ({ tareas }) => {
                                 </div>
 
                             </div>
-
-                            <button className='btn btn-primary m-2 w-100' onClick={handleAddTask}>Add Task</button>
+                            {
+                                state == true?(
+                                    <button className='btn btn-primary m-2 w-100' onClick={handleAddTask}>Add Task</button>
+                                ):(
+                                    <button className='btn btn-primary m-2 w-100' onClick={handleSubmit}>Update Task</button>
+                                )
+                            }
+                            
                         </div>
                         <div className="task-list-controls">
                             <button onClick={() => handleStatusFilter('DOING')}>DOING</button>
@@ -202,8 +213,8 @@ export const FormTask = ({ tareas }) => {
                                     </div>
                                 </div>
                                 <div className='card-footer'>
-                                    <button type="button" className="btn btn-warning m-1">Editar</button>
-                                    <button type="button" className="btn btn-danger m-1">Eliminar</button>
+                                    <button type="button" className="btn btn-warning m-1" onClick={()=> getUpdate(tarea)}>Editar</button>
+                                    <button type="button" className="btn btn-danger m-1" onClick={()=> delTask(tarea._id)}>Eliminar</button>
                                 </div>
                             </div>
                         ))}

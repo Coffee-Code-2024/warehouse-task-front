@@ -123,6 +123,7 @@ export const modifyTaskRequest = async (id, task) => {
 
 //consulta para eliminar tareas
 export const deleteTaskRequest = async (id) => {
+    console.log(id)
     try {
         return await apiClient.delete(`/task/delete/${id}`);
     } catch (err) {
