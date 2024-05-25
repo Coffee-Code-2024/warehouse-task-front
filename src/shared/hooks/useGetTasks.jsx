@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getTasksRequest } from "../../services/api"
 import toast from 'react-hot-toast'
 
-export const UseGetTasks = () => {
+export const useGetTasks = () => {
     const [tasks, setTasks] = useState([]);//guardar los datos que me devuelve el back
     const [isFetching, setIsFetching] = useState(false);
 

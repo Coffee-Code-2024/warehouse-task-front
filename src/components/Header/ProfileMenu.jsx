@@ -68,17 +68,12 @@ export default function BasicMenu({ token }) {
 
         {
           token ? (
-            <MenuItem onClick={handleProfile} className="menu-items">My profile</MenuItem>
-          ) : (
-            <MenuItem onClick={handleLogin} className="menu-items">Login</MenuItem>
-          )
-        }
-
-        {
-          token ? (
             <MenuItem onClick={handleLogin} className="menu-items">Logout</MenuItem>
           ) : (
-            <MenuItem className="menu-items" onClick={handleSignup}>Sign up</MenuItem>
+            <>
+              <MenuItem onClick={handleLogin} className="menu-items">Login</MenuItem>
+              <MenuItem className="menu-items" onClick={handleSignup}>Sign up</MenuItem>
+            </>
           )
         }
 

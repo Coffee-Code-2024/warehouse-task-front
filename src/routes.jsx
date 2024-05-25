@@ -1,8 +1,8 @@
 import App from './App';
 import { PageNotFound } from './Pages/PageNotFound/PageNotFound.jsx';
 import { Login } from './components/Login.jsx';
-import { TaskContent } from './components/Task/TaskContent.jsx';
-import { FormTask } from './components/Task/FormTask.jsx'
+import { Dashboard } from './Pages/Dashboard/Dashboard.jsx';
+import { jwtDecode } from 'jwt-decode';
 
 export const routes = [
     {
@@ -11,7 +11,7 @@ export const routes = [
     },
     {
         path: '/dashboard',
-        element: <TaskContent />
+        element: <Dashboard token={localStorage.getItem('token') ? jwtDecode(localStorage.getItem('token')) : ''}/>
     },
     {
         path: '*',
