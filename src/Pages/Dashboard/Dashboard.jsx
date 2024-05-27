@@ -13,7 +13,7 @@ export const Dashboard = ({token}) => {
 
   useEffect(() => {//metodo que se ejecuta al principio del componente
     getTasks();
-  }, [console.log(tasks)]);
+  }, []);
 
   if (isFetching) {
     return (

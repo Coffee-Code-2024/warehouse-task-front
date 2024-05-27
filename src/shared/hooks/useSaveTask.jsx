@@ -26,9 +26,8 @@ export const useSaveTask = () => {
             )
         }
 
-        toast.success('Agregado correctamente')
-        // Actualizar la lista de tareas con la nueva tarea creada
-        //setTasksApi(prevTask => [...prevTask, response]); // Suponiendo que `response.data` contiene la nueva tarea creada
+        toast.success(response.data.message)
+        return response.data.task;
     }
     return {
         saveTask,

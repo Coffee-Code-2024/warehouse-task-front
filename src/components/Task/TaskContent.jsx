@@ -22,12 +22,8 @@ export const TaskContent = () => {
 
   //rutas hijas
   return (
-    <>
-
-      <div>
-        <FormTask tareas={tasks} />
-      </div>
-    </>
-
+    <div>
+      <FormTask tareas={tasks} />
+    </div>
   )
 }
